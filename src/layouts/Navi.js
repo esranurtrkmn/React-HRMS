@@ -1,36 +1,48 @@
-import React, { Component } from 'react'
-import { Button, Dropdown, Menu,Container } from 'semantic-ui-react'
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import { Container, Menu, Segment, MenuItem, Button, Icon } from "semantic-ui-react";
+import SignedIn from "./SignedIn";
+import SignedInOut from "./SignedOut";
 
-export default function Navi() {
+export default function Navi(props) {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    const history = useHistory()
+
+    function handlerSignOut(params) {
+        setIsAuthenticated(false)
+        history.push("/");
+    }
+
+    function handlerSignIn(params) {
+        setIsAuthenticated(true)
+
+    }
     return (
         <div>
-            <Menu inverted fixed="top">
-                <Container>
-                    <Menu.Item
-                        name='home'
 
-                    />
-                    <Menu.Item
-                        name='messages'
-
-                    />
-
-                    <Menu.Menu position='right'>
-                        <Dropdown item text='Language'>
-                            <Dropdown.Menu>
-                                <Dropdown.Item>English</Dropdown.Item>
-                                <Dropdown.Item>Russian</Dropdown.Item>
-                                <Dropdown.Item>Spanish</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-
-                        <Menu.Item>
-                            <Button primary>Sign Up</Button>
-                        </Menu.Item>
+            <Container>
+                <Menu pointing fixed>
+                    <MenuItem>
+                        <MenuItem color="teal" link as={NavLink} to='/'>hrms.net</MenuItem>
+                    </MenuItem>
+                    <Menu.Item color="teal" link as={NavLink} to='/jobs'>İş Ara</Menu.Item>
+                    <Menu.Item color="teal" link as={NavLink} to='/jobadverts'>İş İlanları</Menu.Item>
+                    <Menu.Item color="teal" >Kariyer Rehberi</Menu.Item>
+                    <Menu.Menu position="right">
+                        {isAuthenticated ? <SignedIn signOut={handlerSignOut} /> : <SignedInOut signIn={handlerSignIn} />}
                     </Menu.Menu>
-                </Container>
+                </Menu>
+            </Container>
 
-            </Menu>
+
+
         </div>
     )
+
+
 }
+
