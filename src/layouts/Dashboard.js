@@ -7,6 +7,8 @@ import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
 import JobAdvertList from '../pages/JobAdvertList';
 import SignUpEmployer from '../pages/SignUpEmployer';
+import JobAdvertAdd from '../pages/JobAdvertAdd';
+import JobAdvertDetail from '../pages/JobAdvertDetail';
 
 
 export default function () {
@@ -19,6 +21,8 @@ export default function () {
             <Route exact path='/' component={Footer} />
             <Route exact path='/jobadverts' component={JobAdvertList} />
             <Route exact path='/signupemployer' component={SignUpEmployer} />
+            <Route exact path="/jobadvertadd" component={JobAdvertAdd}/>
+            <Route exact path="/jobadvertdetail" component={JobAdvertDetail}/>
 
         </div>
     )

@@ -25,7 +25,7 @@ export default function Navi(props) {
         <div>
 
             <Container>
-                <Menu pointing fixed>
+                <Menu fixed>
                     <MenuItem>
                         <MenuItem color="teal" link as={NavLink} to='/'>hrms.net</MenuItem>
                     </MenuItem>

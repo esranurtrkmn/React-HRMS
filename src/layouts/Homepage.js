@@ -18,7 +18,7 @@ export default function Homepage() {
 
                         </GridColumn>
                         <GridColumn floated='right' width={16}>
-                            <Button circular color="violet"  to='/signup' >KARİYERİNE İLK ADIMI ATMAK İÇİN TIKLA</Button>
+                            
                         </GridColumn>
                     </GridRow>
                 </Grid>

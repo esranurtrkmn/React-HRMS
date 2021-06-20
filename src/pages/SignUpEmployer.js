@@ -14,7 +14,7 @@ import {
     Segment
 } from "semantic-ui-react";
 import { success, error, info } from "react-notifications";
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 import EmployerService from '../services/employerService';
 
 
@@ -49,10 +49,10 @@ export default function SignUpEmployer() {
         onSubmit: (values) => {
             employerService
                 .add(values)
-                .then((result) =>console.log(result.data.message));
+                .then((result) => console.log(result.data.message));
         },
     });
-    
+
     const handleChangeSemantic = (value, fieldName) => {
         formik.setFieldValue(fieldName, value);
     };
