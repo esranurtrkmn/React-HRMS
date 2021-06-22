@@ -9,6 +9,9 @@ import JobAdvertList from '../pages/JobAdvertList';
 import SignUpEmployer from '../pages/SignUpEmployer';
 import JobAdvertAdd from '../pages/JobAdvertAdd';
 import JobAdvertDetail from '../pages/JobAdvertDetail';
+import EmployerList from '../pages/EmployerList';
+import EmployerDetail from '../pages/EmployerDetail';
+import SignInEmployer from '../pages/SignInEmployer';
 
 
 export default function () {
@@ -21,8 +24,11 @@ export default function () {
             <Route exact path='/' component={Footer} />
             <Route exact path='/jobadverts' component={JobAdvertList} />
             <Route exact path='/signupemployer' component={SignUpEmployer} />
+            <Route exact path='/signinemployer' component={SignInEmployer} />
+            <Route exact path="/employers" component={EmployerList}/>
+            <Route exact path="/employers/:id" component={EmployerDetail}/>
             <Route exact path="/jobadvertadd" component={JobAdvertAdd}/>
-            <Route exact path="/jobadvertdetail" component={JobAdvertDetail}/>
+            <Route exact path="/jobadverts/:id" component={JobAdvertDetail}/>
 
         </div>
     )

@@ -60,7 +60,7 @@ export default function SignUpEmployer() {
     return (
         <div>
             <Header as="h3" color="teal" textAlign="left">
-                <Image src="https://res.cloudinary.com/dtewzgzgk/image/upload/v1623772439/interim-hr-experts-icon_di1e9w.png" /> Şirket Kayıt Portalı
+                <Image src="https://res.cloudinary.com/dtewzgzgk/image/upload/v1623772439/interim-hr-experts-icon_di1e9w.png" /> İşveren Kayıt Portalı
             </Header>
             <Form size="small" onSubmit={formik.handleSubmit}>
                 <Segment stacked>

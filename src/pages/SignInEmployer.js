@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react'
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Form, Header, Image, Message, Segment, Checkbox } from 'semantic-ui-react'
-import JobAdvertList from "./JobAdvertList";
 
-export default function SignIn() {
+export default function SignInEmployer() {
 
     const signInSchema = Yup.object().shape({
         email: Yup.string()
@@ -26,10 +25,12 @@ export default function SignIn() {
         },
     });
 
+
+
     return (
         <div>
             <Header as="h3" color="teal" textAlign="left">
-                <Image src="https://res.cloudinary.com/dtewzgzgk/image/upload/v1623772439/interim-hr-experts-icon_di1e9w.png" /> Aday Giriş Portalı
+                <Image src="https://res.cloudinary.com/dtewzgzgk/image/upload/v1623772439/interim-hr-experts-icon_di1e9w.png" /> İşveren Giriş Portalı
             </Header>
             <Form size="large" onSubmit={formik.handleSubmit}>
                 <Segment stacked >
@@ -75,7 +76,7 @@ export default function SignIn() {
                                 label="Beni hatırla"
                             />
                         </Form.Field>
-                        <Button onclick={JobAdvertList} id="myButton" color="teal" fluid size="large" >
+                        <Button color="teal" fluid size="large" >
                             Giriş Yap
                         </Button>
 
@@ -83,9 +84,9 @@ export default function SignIn() {
                 </Segment>
             </Form>
             <Message>
-                <p>Henüz özgeçmişin yok mu?</p>
-                <p><Link to={"/signup"}>Hemen üye ol</Link></p>
+                <p>Henüz üye değil misiniz?</p>
+                <p><Link to={"/signupemployer"}>İşveren Kaydı Oluştur</Link></p>
             </Message>
         </div>
-    );
+    )
 }

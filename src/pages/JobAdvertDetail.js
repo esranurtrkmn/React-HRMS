@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import JobAdvertService from "../services/jobAdvertService";
 
-export default function jobAdvertDetail() {
+export default function JobAdvertDetail() {
 
     let { id } = useParams();
 

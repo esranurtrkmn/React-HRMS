@@ -15,7 +15,7 @@ export default function JobAdvertList() {
 
     return (
         <div>
-            <Table celled color={"black"}>
+            <Table fixed>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>*</Table.HeaderCell>
@@ -52,7 +52,7 @@ export default function JobAdvertList() {
 
                 <Table.Footer>
                     <Table.Row>
-                        <Table.HeaderCell colSpan="6">
+                        <Table.HeaderCell colSpan="5">
                             <Menu floated="right" pagination>
                                 <Menu.Item as="a" icon>
                                     <Icon name="chevron left" />
