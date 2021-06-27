@@ -6,6 +6,7 @@ import { Container, Menu, Segment, MenuItem, Button, Icon } from "semantic-ui-re
 import SignedIn from "./SignedIn";
 import SignedInOut from "./SignedOut";
 
+
 export default function Navi(props) {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -29,7 +30,7 @@ export default function Navi(props) {
                     <MenuItem>
                         <MenuItem color="teal" link as={NavLink} to='/'>hrms.net</MenuItem>
                     </MenuItem>
-                    <Menu.Item color="teal" link as={NavLink} to='/jobs'>İş Ara</Menu.Item>
+                    <Menu.Item color="teal" link as={NavLink} to='/jobsearch'>İş Ara</Menu.Item>
                     <Menu.Item color="teal" link as={NavLink} to='/jobadverts'>İş İlanları</Menu.Item>
                     <Menu.Item color="teal" >Kariyer Rehberi</Menu.Item>
                     <Menu.Menu position="right">
