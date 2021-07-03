@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Grid, GridColumn, GridRow, Image, Button } from 'semantic-ui-react';
 import { NavLink } from "react-router-dom";
-import SignUp from '../pages/SignUp';
+import SignUp from '../pages/Candidate/SignUp';
 
 export default function Homepage() {
     return (

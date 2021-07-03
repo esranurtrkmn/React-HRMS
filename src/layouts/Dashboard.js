@@ -3,19 +3,19 @@ import { Button, Dropdown, Menu, Grid, Segment, MenuItem } from 'semantic-ui-rea
 import { Route } from 'react-router-dom';
 import Footer from './Footer';
 import Homepage from './Homepage';
-import SignUp from '../pages/SignUp';
-import SignIn from '../pages/SignIn';
-import JobAdvertList from '../pages/JobAdvertList';
-import SignUpEmployer from '../pages/SignUpEmployer';
-import JobAdvertAdd from '../pages/JobAdvertAdd';
-import JobAdvertDetail from '../pages/JobAdvertDetail';
-import EmployerList from '../pages/EmployerList';
-import EmployerDetail from '../pages/EmployerDetail';
-import SignInEmployer from '../pages/SignInEmployer';
-import ConfirmJobAdverts from '../pages/ConfirmJobAdverts';
-import CandidateList from '../pages/CandidateList';
-import ResumeDetail from '../pages/ResumeDetail';
-import ResumeList from '../pages/ResumeDetail';
+import SignUp from '../pages/Candidate/SignUp';
+import SignIn from '../pages/Candidate/SignIn';
+import JobAdvertList from '../pages/JobAdvert/JobAdvertList';
+import SignUpEmployer from '../pages/Employer/SignUpEmployer';
+import JobAdvertAdd from '../pages/JobAdvert/JobAdvertAdd';
+import JobAdvertDetail from '../pages/JobAdvert/JobAdvertDetail';
+import EmployerList from '../pages/Employer/EmployerList';
+import EmployerDetail from '../pages/Employer/EmployerDetail';
+import SignInEmployer from '../pages/Employer/SignInEmployer';
+import ConfirmJobAdverts from '../pages/JobAdvert/ConfirmJobAdverts';
+import CandidateList from '../pages/Candidate/CandidateList';
+import ResumeDetail from '../pages/Resume/ResumeDetail';
+import ResumeList from '../pages/Resume/ResumeDetail';
 
 
 export default function () {
