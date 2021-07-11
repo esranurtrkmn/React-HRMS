@@ -157,6 +157,29 @@ export default function EducationList() {
                                                     >
                                                         {education.endYear}
                                                     </Table.Cell>
+
+                                                </Table.Row>
+                                                <Table.Row textAlign="center">
+                                                    <Table.Cell>
+                                                        {" "}
+                                                        <Label
+                                                            basic
+                                                            color="teal"
+                                                            pointing="right"
+                                                            style={{
+                                                                fontSize: "1.2em",
+                                                            }}
+                                                        >
+                                                            Eğitim Durumu:
+                                                        </Label>
+                                                    </Table.Cell>
+                                                    <Table.Cell
+                                                        style={{
+                                                            fontSize: "1.4em",
+                                                        }}
+                                                    >
+                                                        {education.graduateStatus}
+                                                    </Table.Cell>
                                                 </Table.Row>
                                             </Table.Body>
                                         </Table>
@@ -164,7 +187,7 @@ export default function EducationList() {
                                 </Card.Content>
 
                                 <Card.Description>
-                                    
+
                                     <EducationUpdate education={education} />
                                 </Card.Description>
                             </Card>

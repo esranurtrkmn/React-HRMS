@@ -9,6 +9,7 @@ import {
     Label,
 } from "semantic-ui-react";
 import LanguageService from "../../services/languageService";
+import LanguageUpdate from "./LanguageUpdate";
 import { useParams } from "react-router-dom";
 
 
@@ -44,7 +45,7 @@ export default function LanguageList() {
                                 <Icon name="language" color="teal" /> Yabancı Dil{" "}
 
                             </Message.Header>
-                            
+
 
 
                             <Card fluid color="teal"  >
@@ -105,8 +106,11 @@ export default function LanguageList() {
                                         </Table>
                                     </Card.Meta>
                                 </Card.Content>
+                                <Card.Description>
+                                    {" "}
+                                    <LanguageUpdate language={language} />
+                                </Card.Description>
 
-                                
                             </Card>
                         </Message>
                     ))}

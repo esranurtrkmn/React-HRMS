@@ -10,7 +10,7 @@ export default class WorkExperienceService{
         return axios.get("http://localhost:8080/api/workexperience/getByResumeId?id="+id)
     }
 
-    update(values) {
-        return axios.put("http://localhost:8080/api/workexperience/update", values)
+    update(workExperience) {
+        return axios.put("http://localhost:8080/api/workexperience/update", workExperience)
     }
 }

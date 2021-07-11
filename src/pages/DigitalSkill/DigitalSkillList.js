@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DigitalSkillService from "../../services/digitalSkillService";
+import DigitalSkillUpdate from "./DigitalSkillUpdate";
 import {
     Label,
     Table,
@@ -18,7 +19,7 @@ export default function DigitalSkillList() {
     const [digitalSkills, setDigitalSkills] = useState([]);
     useEffect(() => {
         let digitalSkillService = new DigitalSkillService();
-      
+
         digitalSkillService
             .getByResumeId(id)
             .then((result) => setDigitalSkills(result.data.data));
@@ -86,8 +87,12 @@ export default function DigitalSkillList() {
                                             </Table.Body>
                                         </Table>
                                     </Card.Meta>
-                                    
+
                                 </Card.Content>
+
+                                <Card.Description>
+                                    <DigitalSkillUpdate digitalSkill={digitalSkill} />
+                                </Card.Description>
                             </Card>
                         ))}
                     </Message>

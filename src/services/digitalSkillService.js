@@ -10,7 +10,7 @@ export default class DigitalSkillService{
         return axios.get("http://localhost:8080/api/digitalskill/getByResumeId?id="+id)
     }
 
-    update(values) {
-        return axios.put("http://localhost:8080/api/digitalskill/update", values)
+    update(digitalSkill) {
+        return axios.put("http://localhost:8080/api/digitalskill/update", digitalSkill)
     }
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import WorkExperienceService from '../../services/workExperienceService'
+import WorkExperienceUpdate from './WorkExperienceUpdate'
 import { Label, Button, Table, Card, Container, Segment, Icon, Message } from 'semantic-ui-react'
 import * as moment from 'moment'
 
@@ -149,8 +150,11 @@ export default function WorkExperienceList() {
                                         </Table>
                                     </Card.Meta>
                                 </Card.Content>
+                                <Card.Description>
+                                    {" "}
+                                    <WorkExperienceUpdate workExperience={workExperience} />
+                                </Card.Description>
 
-                                
                             </Card>
                         ))}
                     </Message>

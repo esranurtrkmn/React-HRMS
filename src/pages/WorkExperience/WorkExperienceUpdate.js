@@ -1,43 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { Button, Icon, Modal, Container, Segment, Grid, Form, Card, Label, Dropdown, Input } from "semantic-ui-react";
+import React, { useState, useEffect } from 'react'
+import { Button, Modal, Icon, Form, Input, Label, Segment, Container, Grid, Dropdown, Card } from 'semantic-ui-react'
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import swal from "sweetalert";
-import EducationService from "../../services/educationService";
-import ResumeService from "../../services/resumeService";
+import WorkExperienceService from '../../services/workExperienceService';
 
 
-export default function EducationUpdate({ education }) {
 
+export default function JobExperienceUpdate({ workExperience }) {
 
-    let { id } = useParams();
-
-    const EducationUpdateSchema = Yup.object().shape({
-        schoolName: Yup.string().required("Zorunlu"),
-        branch: Yup.string().required("Zorunlu"),
-        startYear: Yup.number().required("Zorunlu")
+    const WorkExperienceUpdateSchema = Yup.object().shape({
+        companyName: Yup.string().required("Zorunlu"),
+        jobTitle: Yup.string().required("Zorunlu"),
+        startYear: Yup.date().required("Zorunlu"),
+        endYear: Yup.date().required("Zorunlu")
     });
     const history = useHistory();
     const formik = useFormik({
         initialValues: {
-
-            id: education.id,
-            schoolName: education.schoolName,
-            branch: education.branch,
-            startYear: education.startYear,
-            endYear: education.endYear,
-            graduatestatus: education.graduateStatus
-
+            id: workExperience.id,
+            companyName: workExperience.companyName,
+            jobTitle: workExperience.jobTitle,
+            startYear: workExperience.startYear,
+            endYear: workExperience.endYear
+            
         },
-        validationSchema: EducationUpdateSchema,
+        validationSchema: WorkExperienceUpdateSchema,
         onSubmit: (values) => {
+
             values.resume = { id: 8 };
-
-            let educationService = new EducationService();
-
-            educationService.update(values).then((result) => console.log(result.data.data));
-            swal("Başarılı!", "Eğitim bilgisi güncellendi!", "success");
+            let workExperienceService = new WorkExperienceService();
+            workExperienceService.update(values).then((result) => console.log(result.data.data));
+            swal("Başarılı!", "İş deneyimi güncellendi!", "success");
             history.push("/resumes/8");
         },
     });
@@ -48,7 +43,7 @@ export default function EducationUpdate({ education }) {
     };
 
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(false)
     return (
         <div>
             <Modal
@@ -71,7 +66,7 @@ export default function EducationUpdate({ education }) {
                     </Button>
                 }
             >
-                <Modal.Header>Eğitim Bilgisi Güncelleme</Modal.Header>
+                <Modal.Header>İş Deneyimi Güncelleme</Modal.Header>
                 <Modal.Description>
                     <Container>
                         <Segment circle="true" vertical style={{ padding: "3em 0em" }}>
@@ -81,42 +76,40 @@ export default function EducationUpdate({ education }) {
                                     <Card fluid color="blue">
                                         <Card.Content>
                                             <Form onSubmit={formik.handleSubmit}>
-
+                                                
                                                 <Form.Field style={{ marginBottom: "1rem" }}>
                                                     <Label basic color="blue">
-                                                        <Icon name="building" />
-                                                        Okul Adı:
+                                                        <Icon name="building" />Şirket Adı:
                                                     </Label>
                                                     <Input
                                                         style={{ marginRight: "1em", marginTop: "1em" }}
-                                                        placeholder="Okul Adı..."
-                                                        value={formik.values.schoolName}
-                                                        name="schoolName"
+                                                        placeholder="Şirket Adı..."
+                                                        value={formik.values.companyName}
+                                                        name="companyName"
                                                         onChange={formik.handleChange}
                                                         onBlur={formik.handleBlur}
                                                     ></Input>
-                                                    {formik.errors.schoolName && formik.touched.schoolName && (
+                                                    {formik.errors.companyName && formik.touched.companyName && (
                                                         <div className={"ui pointing red basic label"}>
-                                                            {formik.errors.schoolName}
+                                                            {formik.errors.companyName}
                                                         </div>
                                                     )}
                                                 </Form.Field>
                                                 <Form.Field style={{ marginBottom: "1rem" }}>
                                                     <Label basic color="blue">
-                                                        <Icon name="building" />
-                                                        Bölüm Adı:
+                                                        <Icon name="user" /> Pozisyon Adı:
                                                     </Label>
                                                     <Input
                                                         style={{ marginRight: "1em", marginTop: "1em" }}
-                                                        placeholder="Bölüm Adı..."
-                                                        value={formik.values.branch}
-                                                        name="branch"
+                                                        placeholder="Pozisyon Adı..."
+                                                        value={formik.values.jobTitle}
+                                                        name="jobTitle"
                                                         onChange={formik.handleChange}
                                                         onBlur={formik.handleBlur}
                                                     ></Input>
-                                                    {formik.errors.branch && formik.touched.branch && (
+                                                    {formik.errors.jobTitle && formik.touched.jobTitle && (
                                                         <div className={"ui pointing red basic label"}>
-                                                            {formik.errors.branch}
+                                                            {formik.errors.jobTitle}
                                                         </div>
                                                     )}
                                                 </Form.Field>
@@ -141,12 +134,12 @@ export default function EducationUpdate({ education }) {
                                                 </Form.Field>
                                                 <Form.Field style={{ marginBottom: "1rem" }}>
                                                     <Label basic color="blue">
-                                                        <Icon name="calendar alternate outline" /> Mezuniyet Tarihi:
+                                                        <Icon name="calendar alternate outline" /> Bitiş Tarihi:
                                                     </Label>
                                                     <Input
                                                         type="number"
                                                         style={{ marginRight: "1em", marginTop: "1em" }}
-                                                        placeholder="Mezuniyet Tarihi..."
+                                                        placeholder="Bitiş Tarihi..."
                                                         value={formik.values.endYear}
                                                         name="endYear"
                                                         onChange={formik.handleChange}
@@ -155,25 +148,6 @@ export default function EducationUpdate({ education }) {
                                                     {formik.errors.endYear && formik.touched.endYear && (
                                                         <div className={"ui pointing red basic label"}>
                                                             {formik.errors.endYear}
-                                                        </div>
-                                                    )}
-                                                </Form.Field>
-                                                <Form.Field style={{ marginBottom: "1rem" }}>
-                                                    <Label basic color="blue">
-                                                        <Icon name="graduate" />
-                                                        Eğitim Durumu:
-                                                    </Label>
-                                                    <Input
-                                                        style={{ marginRight: "1em", marginTop: "1em" }}
-                                                        placeholder="Eğitim durumu..."
-                                                        value={formik.values.graduateStatus}
-                                                        name="graduateStatus"
-                                                        onChange={formik.handleChange}
-                                                        onBlur={formik.handleBlur}
-                                                    ></Input>
-                                                    {formik.errors.graduateStatus && formik.touched.graduateStatus && (
-                                                        <div className={"ui pointing red basic label"}>
-                                                            {formik.errors.graduateStatus}
                                                         </div>
                                                     )}
                                                 </Form.Field>
@@ -223,5 +197,5 @@ export default function EducationUpdate({ education }) {
                 </Modal.Description>
             </Modal>
         </div>
-    );
+    )
 }

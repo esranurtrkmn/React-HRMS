@@ -10,7 +10,7 @@ export default class LanguageService{
         return axios.get("http://localhost:8080/api/language/getByResumeId?id="+id)
     }
 
-    update(values) {
-        return axios.put("http://localhost:8080/api/language/update", values)
+    update(language) {
+        return axios.put("http://localhost:8080/api/language/update", language)
     }
 }
