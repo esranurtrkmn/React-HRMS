@@ -281,10 +281,9 @@ export default function JobAdvertAdd() {
                             )}
                         </Form.Field>
                         <Button
+                            
                             color="teal"
-                            content="Ekle"
-                            labelPosition="right"
-                            positive
+                            content="Ekle"                                                  
                             type="submit"
                             style={{ marginLeft: "20px" }}
                         />

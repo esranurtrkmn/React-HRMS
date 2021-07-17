@@ -16,6 +16,7 @@ import ConfirmJobAdverts from '../pages/JobAdvert/ConfirmJobAdverts';
 import CandidateList from '../pages/Candidate/CandidateList';
 import ResumeDetail from '../pages/Resume/ResumeDetail';
 import ResumeList from '../pages/Resume/ResumeDetail';
+import JobAdvertFilter from '../pages/JobAdvert/JobAdvertFilter';
 
 
 export default function () {
@@ -24,6 +25,7 @@ export default function () {
 
             <Route exact path='/' component={Homepage} />
             <Route exact path='/' component={Footer} />
+            <Route exact path='/jobsearch' component={JobAdvertFilter} />
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/login' component={SignIn}/>           
             <Route exact path='/candidates' component={CandidateList} />
@@ -37,6 +39,7 @@ export default function () {
             <Route exact path="/jobadvertconfirm" component={ConfirmJobAdverts}/>
             <Route exact path="/resumes/:id" component={ResumeDetail}/>
             <Route exact path="/resumes" component={ResumeList}/>
+            
 
         </div>
     )
