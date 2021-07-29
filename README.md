@@ -8,7 +8,7 @@ Used Technologies:
 - Css
 - JavaScript
 - ReactJS
-- 
+
 
 UML Component Diagram:
 
