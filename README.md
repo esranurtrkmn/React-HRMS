@@ -1,3 +1,14 @@
+## HRMS-React-Frontend
+
+Description:
+Here is the ui part of the HRMS project. The codes provided in the backend are displayed to the user with the help of API.
+
+Used Technologies:
+- Html
+- Css
+- JavaScript
+- ReactJS
+- 
 
 UML Component Diagram:
 
