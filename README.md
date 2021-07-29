@@ -2,7 +2,8 @@
 
 Description:
 
--Here is the ui part of the HRMS project. The codes provided in the backend are displayed to the user with the help of API.
+- Here is the ui part of the HRMS project. The codes provided in the backend are displayed to the user with the help of API.
+
 
 Used Technologies:
 
